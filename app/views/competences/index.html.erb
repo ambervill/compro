@@ -13,7 +13,7 @@
 <% @competences.each do |competence| %>
   <tr>
     <td><%= competence.name %></td>
-    <td><%= competence.type %></td>
+    <td><%= competence.competence_type %></td>
     <td><%= competence.description %></td>
     <td><%= link_to 'Show', competence %></td>
     <td><%= link_to 'Edit', edit_competence_path(competence) %></td>
