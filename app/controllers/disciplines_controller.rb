@@ -80,4 +80,20 @@ class DisciplinesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def table
+    @data = Array.new(Discipline.all.count)
+    @competences = Competence.all
+    Discipline.all.each do |discipline|
+      @data[discipline.id-1] = {name: discipline.name, competences: []}
+      discipline.discipline_competences.each do |dc|
+        @data[discipline.id-1][:competences] << dc.competence_id
+      end
+    end
+    logger.debug @data
+    respond_to do |format|
+      format.html # table.haml
+      #format.json { render json: @disciplines }
+    end
+  end
 end
