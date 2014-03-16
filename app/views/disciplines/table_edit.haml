@@ -1,0 +1,19 @@
+﻿%h2 Учебная программа специальности 231300
+
+%form{action: "save_table", method: "post"}
+  %table{border:1}
+    %tr
+      %th Дисциплина
+      - @competences.each do |competence|
+        %th= competence.name
+    - @data.each do |discipline|
+      %tr 
+        %td 
+          = discipline[:name]
+        - @competences.each do |competence|
+          %td
+            - if discipline[:competences].include? competence.id
+              %input{type: :checkbox, checked: :checked}
+            - else
+              %input{type: :checkbox}
+  %input{type: :submit, value: "Сохранить"}

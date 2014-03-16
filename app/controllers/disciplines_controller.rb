@@ -92,8 +92,18 @@ class DisciplinesController < ApplicationController
     end
     logger.debug @data
     respond_to do |format|
-      format.html # table.haml
+      format.html do
+        if params[:edit]
+          render "table_edit" # table.haml
+        else
+          render "table"
+        end
+      end
       #format.json { render json: @disciplines }
     end
+  end
+  
+  def save_table
+    redirect_to root_url
   end
 end

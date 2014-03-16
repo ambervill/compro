@@ -12,3 +12,5 @@
         %td
           - if discipline[:competences].include? competence.id
             Да
+%br            
+= link_to "Редактировать", root_path(edit: true)

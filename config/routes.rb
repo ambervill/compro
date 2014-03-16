@@ -1,10 +1,8 @@
 Compro::Application.routes.draw do
   resources :competences
-
-
   resources :disciplines
-
-
+  match "save_table" => "disciplines#save_table"
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

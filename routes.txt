@@ -1,0 +1,15 @@
+    competences GET    /competences(.:format)          competences#index
+                POST   /competences(.:format)          competences#create
+ new_competence GET    /competences/new(.:format)      competences#new
+edit_competence GET    /competences/:id/edit(.:format) competences#edit
+     competence GET    /competences/:id(.:format)      competences#show
+                PUT    /competences/:id(.:format)      competences#update
+                DELETE /competences/:id(.:format)      competences#destroy
+    disciplines GET    /disciplines(.:format)          disciplines#index
+                POST   /disciplines(.:format)          disciplines#create
+ new_discipline GET    /disciplines/new(.:format)      disciplines#new
+edit_discipline GET    /disciplines/:id/edit(.:format) disciplines#edit
+     discipline GET    /disciplines/:id(.:format)      disciplines#show
+                PUT    /disciplines/:id(.:format)      disciplines#update
+                DELETE /disciplines/:id(.:format)      disciplines#destroy
+           root        /                               disciplines#table
