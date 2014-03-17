@@ -85,7 +85,7 @@ class DisciplinesController < ApplicationController
     @data = Array.new(Discipline.all.count)
     @competences = Competence.all
     Discipline.all.each do |discipline|
-      @data[discipline.id-1] = {name: discipline.name, competences: []}
+      @data[discipline.id-1] = {name: discipline.name, id: discipline.id, competences: []}
       discipline.discipline_competences.each do |dc|
         @data[discipline.id-1][:competences] << dc.competence_id
       end
@@ -104,6 +104,7 @@ class DisciplinesController < ApplicationController
   end
   
   def save_table
+    Discipline.save_competences(params[:flag])
     redirect_to root_url
   end
 end
