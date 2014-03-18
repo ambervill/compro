@@ -1,0 +1,20 @@
+%h2 Дисциплины
+
+%table
+  %tr
+    %th Название
+    %th
+    %th
+    %th
+  
+
+  - @disciplines.each do |discipline| 
+    %tr
+      %td= discipline.name
+      %td= link_to 'Show', discipline 
+      %td= link_to 'Edit', edit_discipline_path(discipline) 
+      %td= link_to 'Destroy', discipline, method: :delete, data: { confirm: 'Are you sure?' }
+ 
+%br
+
+= link_to 'Добавить', new_discipline_path 

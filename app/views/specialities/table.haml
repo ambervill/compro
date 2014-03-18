@@ -1,0 +1,20 @@
+﻿= link_to "Дисциплины", disciplines_path
+= link_to "Компетенции", competences_path
+= link_to "Специальности", specialities_path
+
+%h2 Компетенции, соответствующие специальностям
+%table{border:1}
+  %tr
+    %th Специальность
+    - @competences.each do |competence|
+      %th= competence.name
+  - @data.each do |speciality|
+    %tr 
+      %td 
+        = speciality[:name]
+      - @competences.each do |competence|
+        %td
+          - if speciality[:competences].include? competence.id
+            Да
+%br            
+= link_to "Редактировать", specialities_table_path(edit: true)

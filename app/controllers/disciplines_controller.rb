@@ -90,7 +90,6 @@ class DisciplinesController < ApplicationController
         @data[discipline.id-1][:competences] << dc.competence_id
       end
     end
-    logger.debug @data
     respond_to do |format|
       format.html do
         if params[:edit]
