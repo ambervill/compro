@@ -1,10 +1,9 @@
-%h1 Listing specialities
+%h1 Специальности
 
-%table
+%table.table
   %tr
-    %th Name
-    %th Code
-    %th Description
+    %th Название
+    %th Описание
     %th
     %th
     %th
@@ -12,7 +11,6 @@
   - @specialities.each do |speciality|
     %tr
       %td= speciality.name
-      %td= speciality.code
       %td= speciality.description
       %td= link_to 'Show', speciality
       %td= link_to 'Edit', edit_speciality_path(speciality)

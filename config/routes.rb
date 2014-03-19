@@ -7,6 +7,7 @@ Compro::Application.routes.draw do
   match "save_table" => "disciplines#save_table"
   match "save_speciality" => "specialities#save_table"
   match "specialities_table" => "specialities#table"
+  match "disciplines_for_speciality" => "specialities#disciplines_for_speciality"
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

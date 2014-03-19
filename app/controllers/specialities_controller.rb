@@ -108,4 +108,10 @@ class SpecialitiesController < ApplicationController
     Speciality.save_competences(params[:flag])
     redirect_to specialities_table_path
   end
+  
+  # params: speciality_id
+  def disciplines_for_speciality
+    @speciality = Speciality.find(params[:id])
+    @disciplines_names = @speciality.competences.map{|c| c.disciplines.pluck(:name)}.flatten.uniq.sort
+  end
 end
