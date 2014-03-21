@@ -1,15 +1,27 @@
-    competences GET    /competences(.:format)          competences#index
-                POST   /competences(.:format)          competences#create
- new_competence GET    /competences/new(.:format)      competences#new
-edit_competence GET    /competences/:id/edit(.:format) competences#edit
-     competence GET    /competences/:id(.:format)      competences#show
-                PUT    /competences/:id(.:format)      competences#update
-                DELETE /competences/:id(.:format)      competences#destroy
-    disciplines GET    /disciplines(.:format)          disciplines#index
-                POST   /disciplines(.:format)          disciplines#create
- new_discipline GET    /disciplines/new(.:format)      disciplines#new
-edit_discipline GET    /disciplines/:id/edit(.:format) disciplines#edit
-     discipline GET    /disciplines/:id(.:format)      disciplines#show
-                PUT    /disciplines/:id(.:format)      disciplines#update
-                DELETE /disciplines/:id(.:format)      disciplines#destroy
-           root        /                               disciplines#table
+                                   root        /                                                  disciplines#table
+                            competences GET    /competences(.:format)                             competences#index
+                                        POST   /competences(.:format)                             competences#create
+                         new_competence GET    /competences/new(.:format)                         competences#new
+                        edit_competence GET    /competences/:id/edit(.:format)                    competences#edit
+                             competence GET    /competences/:id(.:format)                         competences#show
+                                        PUT    /competences/:id(.:format)                         competences#update
+                                        DELETE /competences/:id(.:format)                         competences#destroy
+                            disciplines GET    /disciplines(.:format)                             disciplines#index
+                                        POST   /disciplines(.:format)                             disciplines#create
+                         new_discipline GET    /disciplines/new(.:format)                         disciplines#new
+                        edit_discipline GET    /disciplines/:id/edit(.:format)                    disciplines#edit
+                             discipline GET    /disciplines/:id(.:format)                         disciplines#show
+                                        PUT    /disciplines/:id(.:format)                         disciplines#update
+                                        DELETE /disciplines/:id(.:format)                         disciplines#destroy
+                           specialities GET    /specialities(.:format)                            specialities#index
+                                        POST   /specialities(.:format)                            specialities#create
+                         new_speciality GET    /specialities/new(.:format)                        specialities#new
+                        edit_speciality GET    /specialities/:id/edit(.:format)                   specialities#edit
+                             speciality GET    /specialities/:id(.:format)                        specialities#show
+                                        PUT    /specialities/:id(.:format)                        specialities#update
+                                        DELETE /specialities/:id(.:format)                        specialities#destroy
+                      disciplines_table GET    /disciplines/table(.:format)                       disciplines#table
+                 disciplines_save_table POST   /disciplines/save_table(.:format)                  disciplines#save_table
+                     specialities_table GET    /specialities/table(.:format)                      specialities#table
+                specialities_save_table POST   /specialities/save_table(.:format)                 specialities#save_table
+specialities_disciplines_for_speciality GET    /specialities/disciplines_for_speciality(.:format) specialities#disciplines_for_speciality

@@ -13,5 +13,9 @@
  */
 
  .table {
-  border-width: 2px;
+
+     border-color: #222;
+     border-collapse: collapse;
+     border-spacing: 0;
+     border-top-width: 2px;
  }

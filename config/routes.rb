@@ -1,13 +1,22 @@
 Compro::Application.routes.draw do
-  resources :specialities
 
+  root :to => 'disciplines#table'
 
+  namespace :disciplines do
+    get "table"
+    post "save_table"
+  end
+  namespace :specialities do
+    get "table"
+    post "save_table"
+    get "disciplines_for_speciality"
+  end
   resources :competences
   resources :disciplines
-  match "save_table" => "disciplines#save_table"
-  match "save_speciality" => "specialities#save_table"
-  match "specialities_table" => "specialities#table"
-  match "disciplines_for_speciality" => "specialities#disciplines_for_speciality"
+  resources :specialities
+  #match "save_speciality" => "specialities#save_table"
+  #match "specialities_table" => "specialities#table"
+  #match "disciplines_for_speciality" => "specialities#disciplines_for_speciality"
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -58,7 +67,7 @@ Compro::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'disciplines#table'
+
 
   # See how all your routes lay out with "rake routes"
 

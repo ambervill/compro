@@ -9,7 +9,7 @@
   - @data.each do |speciality|
     %tr 
       %td 
-        =  link_to speciality[:name], disciplines_for_speciality_path(:id => speciality[:id])
+        =  link_to speciality[:name], specialities_disciplines_for_speciality_path(:id => speciality[:id])
       - @competences.each do |competence|
         %td
           - if speciality[:competences].include? competence.id
