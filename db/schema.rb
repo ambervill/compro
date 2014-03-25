@@ -11,20 +11,56 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140312185206) do
+ActiveRecord::Schema.define(:version => 20140318175841) do
 
   create_table "competences", :force => true do |t|
     t.string   "name"
-    t.string   "type"
+    t.string   "competence_type"
     t.string   "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
+
+  create_table "discipline_competences", :force => true do |t|
+    t.integer  "discipline_id"
+    t.integer  "competence_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "discipline_competences", ["competence_id"], :name => "index_discipline_competences_on_competence_id"
+  add_index "discipline_competences", ["discipline_id"], :name => "index_discipline_competences_on_discipline_id"
 
   create_table "disciplines", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "specialists", :force => true do |t|
+    t.string   "name"
+    t.string   "code"
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "specialities", :force => true do |t|
+    t.string   "name"
+    t.string   "code"
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "speciality_competences", :force => true do |t|
+    t.integer  "speciality_id"
+    t.integer  "competence_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "speciality_competences", ["competence_id"], :name => "index_speciality_competences_on_competence_id"
+  add_index "speciality_competences", ["speciality_id"], :name => "index_speciality_competences_on_speciality_id"
 
 end

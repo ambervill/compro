@@ -1,0 +1,12 @@
+﻿
+
+%h2 Дисциплины, соответствующие специальности #{@speciality.name}
+%table{border:1}
+  %tr
+    %th Дисциплины
+    
+  - @disciplines_names.each do |name|
+    %tr 
+      %td 
+        = name
+      

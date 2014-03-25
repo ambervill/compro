@@ -1,0 +1,19 @@
+%h1 Компетенции
+%table
+  %tr
+    %th Название
+    %th Тип
+    %th Описание
+    %th
+    %th
+    %th
+  - @competences.each do |competence|
+    %tr
+      %td= competence.name
+      %td= competence.competence_type
+      %td= competence.description
+      %td= link_to 'Show', competence
+      %td= link_to 'Edit', edit_competence_path(competence)
+      %td= link_to 'Destroy', competence, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'Добавить компетенцию', new_competence_path

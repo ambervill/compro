@@ -1,0 +1,10 @@
+%h1 Подбор дисциплин
+%h3 Выберите специальность, для которой требуется определить набор дисциплин:
+
+%table.table
+  %tr
+    %th
+
+  - @specialities.each do |speciality|
+    %tr
+      %td= link_to speciality[:name], specialities_disciplines_for_speciality_path(:id => speciality[:id])

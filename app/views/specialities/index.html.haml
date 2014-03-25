@@ -1,0 +1,23 @@
+%h1 Специальности
+
+%table.table
+  %tr
+    %th Название
+    %th Описание
+    %th
+    %th
+    %th
+    %th Рекомендуемые дисциплины
+
+  - @specialities.each do |speciality|
+    %tr
+      %td= speciality.name
+      %td= speciality.description
+      %td= link_to 'Show', speciality
+      %td= link_to 'Edit', edit_speciality_path(speciality)
+      %td= link_to 'Destroy', speciality, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td= link_to "Показать", specialities_disciplines_for_speciality_path(:id => speciality[:id])
+
+%br
+
+= link_to 'New Speciality', new_speciality_path
