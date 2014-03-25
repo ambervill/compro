@@ -6,7 +6,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: myapp_development
+  database: compro_development
   pool: 5
   password:
 
