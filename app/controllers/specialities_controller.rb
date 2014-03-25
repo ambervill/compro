@@ -108,6 +108,10 @@ class SpecialitiesController < ApplicationController
     Speciality.save_competences(params[:flag])
     redirect_to specialities_table_path
   end
+
+  def disciplines_selection_index
+    @specialities = Speciality.all
+  end
   
   # params: speciality_id
   def disciplines_for_speciality

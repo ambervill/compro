@@ -9,6 +9,7 @@ Compro::Application.routes.draw do
   namespace :specialities do
     get "table"
     post "save_table"
+    get "disciplines_selection_index"
     get "disciplines_for_speciality"
   end
   resources :competences

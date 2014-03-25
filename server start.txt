@@ -1,0 +1,4 @@
+cd /var/www/compro
+bundle exec unicorn -c /var/www/compro/config/unicorn/production.rb -E production -D
+
+ps aux | grep 'unicorn' | awk '{print $2}' | xargs sudo kill -9
