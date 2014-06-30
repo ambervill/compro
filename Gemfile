@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.17'
+gem 'rails', '4.1.2'
 
-#gem 'sqlite3'
+gem 'sqlite3'
 gem 'pg'
 gem 'haml-rails'
 
@@ -11,14 +11,15 @@ gem 'haml-rails'
 # in production environments by default.
 group :assets do
   #gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'uglifier', '>= 1.0.3'
+  gem 'coffee-rails'
+  gem 'uglifier'
 end
 
 gem 'jquery-rails'
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 
 group :development, :test do
   gem 'rspec-rails'
 end
 
-ruby "1.9.3"
+ruby "2.0.0"
