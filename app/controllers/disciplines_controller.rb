@@ -40,7 +40,7 @@ class DisciplinesController < ApplicationController
   # POST /disciplines
   # POST /disciplines.json
   def create
-    @discipline = Discipline.new(params[:discipline])
+    @discipline = Discipline.new(discipline_params)
 
     respond_to do |format|
       if @discipline.save
@@ -59,7 +59,7 @@ class DisciplinesController < ApplicationController
     @discipline = Discipline.find(params[:id])
 
     respond_to do |format|
-      if @discipline.update_attributes(params[:discipline])
+      if @discipline.update_attributes(discipline_params)
         format.html { redirect_to @discipline, notice: 'Discipline was successfully updated.' }
         format.json { head :no_content }
       else
@@ -105,5 +105,9 @@ class DisciplinesController < ApplicationController
   def save_table
     Discipline.save_competences(params[:flag])
     redirect_to root_url
+  end
+  
+  def discipline_params
+     params.require(:discipline).permit(:name)
   end
 end

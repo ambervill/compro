@@ -40,7 +40,7 @@ class CompetencesController < ApplicationController
   # POST /competences
   # POST /competences.json
   def create
-    @competence = Competence.new(params[:competence])
+    @competence = Competence.new(competence_params)
 
     respond_to do |format|
       if @competence.save
@@ -59,7 +59,7 @@ class CompetencesController < ApplicationController
     @competence = Competence.find(params[:id])
 
     respond_to do |format|
-      if @competence.update_attributes(params[:competence])
+      if @competence.update_attributes(competence_params)
         format.html { redirect_to @competence, notice: 'Competence was successfully updated.' }
         format.json { head :no_content }
       else
@@ -79,5 +79,9 @@ class CompetencesController < ApplicationController
       format.html { redirect_to competences_url }
       format.json { head :no_content }
     end
+  end
+  
+  def competence_params
+    params.require(:competence).permit(:description, :name, :competence_type)
   end
 end

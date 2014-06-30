@@ -1,5 +1,5 @@
 class Speciality < ActiveRecord::Base
-  attr_accessible :code, :description, :name
+  #attr_accessible :code, :description, :name
   has_many :speciality_competences
   has_many :competences, through: :speciality_competences
   
