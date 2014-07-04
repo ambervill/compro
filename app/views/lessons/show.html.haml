@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Topic:
+  = @lesson.topic_id
+%p
+  %b Discipline:
+  = @lesson.discipline_id
+%p
+  %b Caption:
+  = @lesson.caption
+
+= link_to 'Edit', edit_lesson_path(@lesson)
+\|
+= link_to 'Back', lessons_path

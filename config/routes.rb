@@ -1,5 +1,7 @@
 Compro::Application.routes.draw do
 
+  resources :lessons
+
   root :to => 'disciplines#table'
 
   namespace :disciplines do
