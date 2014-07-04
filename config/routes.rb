@@ -1,5 +1,17 @@
 Compro::Application.routes.draw do
 
+  resources :discipline_results
+
+  resources :topic_results
+
+  resources :lesson_results
+
+  resources :task_results
+
+  resources :students
+
+  resources :tasks
+
   resources :lessons
 
   root :to => 'disciplines#table'

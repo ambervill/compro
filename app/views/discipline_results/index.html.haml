@@ -1,0 +1,23 @@
+%h1 Listing discipline_results
+
+%table
+  %tr
+    %th Discipline
+    %th Student
+    %th Grade
+    %th
+    %th
+    %th
+
+  - @discipline_results.each do |discipline_result|
+    %tr
+      %td= discipline_result.discipline
+      %td= discipline_result.student
+      %td= discipline_result.grade
+      %td= link_to 'Show', discipline_result
+      %td= link_to 'Edit', edit_discipline_result_path(discipline_result)
+      %td= link_to 'Destroy', discipline_result, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Discipline result', new_discipline_result_path

@@ -1,0 +1,23 @@
+%h1 Listing lesson_results
+
+%table
+  %tr
+    %th Lesson
+    %th Student
+    %th Grade
+    %th
+    %th
+    %th
+
+  - @lesson_results.each do |lesson_result|
+    %tr
+      %td= lesson_result.lesson
+      %td= lesson_result.student
+      %td= lesson_result.grade
+      %td= link_to 'Show', lesson_result
+      %td= link_to 'Edit', edit_lesson_result_path(lesson_result)
+      %td= link_to 'Destroy', lesson_result, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Lesson result', new_lesson_result_path

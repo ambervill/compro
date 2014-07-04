@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Lesson:
+  = @lesson_result.lesson
+%p
+  %b Student:
+  = @lesson_result.student
+%p
+  %b Grade:
+  = @lesson_result.grade
+
+= link_to 'Edit', edit_lesson_result_path(@lesson_result)
+\|
+= link_to 'Back', lesson_results_path

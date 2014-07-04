@@ -1,0 +1,19 @@
+= form_for @lesson_result do |f|
+  - if @lesson_result.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@lesson_result.errors.count, "error")} prohibited this lesson_result from being saved:"
+      %ul
+        - @lesson_result.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :lesson
+    = f.text_field :lesson
+  .field
+    = f.label :student
+    = f.text_field :student
+  .field
+    = f.label :grade
+    = f.number_field :grade
+  .actions
+    = f.submit 'Save'

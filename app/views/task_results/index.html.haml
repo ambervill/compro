@@ -1,0 +1,23 @@
+%h1 Listing task_results
+
+%table
+  %tr
+    %th Task
+    %th Student
+    %th Grade
+    %th
+    %th
+    %th
+
+  - @task_results.each do |task_result|
+    %tr
+      %td= task_result.task
+      %td= task_result.student
+      %td= task_result.grade
+      %td= link_to 'Show', task_result
+      %td= link_to 'Edit', edit_task_result_path(task_result)
+      %td= link_to 'Destroy', task_result, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Task result', new_task_result_path

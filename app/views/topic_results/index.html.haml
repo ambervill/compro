@@ -1,0 +1,23 @@
+%h1 Listing topic_results
+
+%table
+  %tr
+    %th Topic
+    %th Student
+    %th Grade
+    %th
+    %th
+    %th
+
+  - @topic_results.each do |topic_result|
+    %tr
+      %td= topic_result.topic
+      %td= topic_result.student
+      %td= topic_result.grade
+      %td= link_to 'Show', topic_result
+      %td= link_to 'Edit', edit_topic_result_path(topic_result)
+      %td= link_to 'Destroy', topic_result, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Topic result', new_topic_result_path
