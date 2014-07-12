@@ -1,27 +1,88 @@
-                                   root        /                                                  disciplines#table
-                            competences GET    /competences(.:format)                             competences#index
-                                        POST   /competences(.:format)                             competences#create
-                         new_competence GET    /competences/new(.:format)                         competences#new
-                        edit_competence GET    /competences/:id/edit(.:format)                    competences#edit
-                             competence GET    /competences/:id(.:format)                         competences#show
-                                        PUT    /competences/:id(.:format)                         competences#update
-                                        DELETE /competences/:id(.:format)                         competences#destroy
-                            disciplines GET    /disciplines(.:format)                             disciplines#index
-                                        POST   /disciplines(.:format)                             disciplines#create
-                         new_discipline GET    /disciplines/new(.:format)                         disciplines#new
-                        edit_discipline GET    /disciplines/:id/edit(.:format)                    disciplines#edit
-                             discipline GET    /disciplines/:id(.:format)                         disciplines#show
-                                        PUT    /disciplines/:id(.:format)                         disciplines#update
-                                        DELETE /disciplines/:id(.:format)                         disciplines#destroy
-                           specialities GET    /specialities(.:format)                            specialities#index
-                                        POST   /specialities(.:format)                            specialities#create
-                         new_speciality GET    /specialities/new(.:format)                        specialities#new
-                        edit_speciality GET    /specialities/:id/edit(.:format)                   specialities#edit
-                             speciality GET    /specialities/:id(.:format)                        specialities#show
-                                        PUT    /specialities/:id(.:format)                        specialities#update
-                                        DELETE /specialities/:id(.:format)                        specialities#destroy
-                      disciplines_table GET    /disciplines/table(.:format)                       disciplines#table
-                 disciplines_save_table POST   /disciplines/save_table(.:format)                  disciplines#save_table
-                     specialities_table GET    /specialities/table(.:format)                      specialities#table
-                specialities_save_table POST   /specialities/save_table(.:format)                 specialities#save_table
-specialities_disciplines_for_speciality GET    /specialities/disciplines_for_speciality(.:format) specialities#disciplines_for_speciality
+                                  Prefix Verb   URI Pattern                                         Controller#Action
+                      discipline_results GET    /discipline_results(.:format)                       discipline_results#index
+                                         POST   /discipline_results(.:format)                       discipline_results#create
+                   new_discipline_result GET    /discipline_results/new(.:format)                   discipline_results#new
+                  edit_discipline_result GET    /discipline_results/:id/edit(.:format)              discipline_results#edit
+                       discipline_result GET    /discipline_results/:id(.:format)                   discipline_results#show
+                                         PATCH  /discipline_results/:id(.:format)                   discipline_results#update
+                                         PUT    /discipline_results/:id(.:format)                   discipline_results#update
+                                         DELETE /discipline_results/:id(.:format)                   discipline_results#destroy
+                           topic_results GET    /topic_results(.:format)                            topic_results#index
+                                         POST   /topic_results(.:format)                            topic_results#create
+                        new_topic_result GET    /topic_results/new(.:format)                        topic_results#new
+                       edit_topic_result GET    /topic_results/:id/edit(.:format)                   topic_results#edit
+                            topic_result GET    /topic_results/:id(.:format)                        topic_results#show
+                                         PATCH  /topic_results/:id(.:format)                        topic_results#update
+                                         PUT    /topic_results/:id(.:format)                        topic_results#update
+                                         DELETE /topic_results/:id(.:format)                        topic_results#destroy
+                          lesson_results GET    /lesson_results(.:format)                           lesson_results#index
+                                         POST   /lesson_results(.:format)                           lesson_results#create
+                       new_lesson_result GET    /lesson_results/new(.:format)                       lesson_results#new
+                      edit_lesson_result GET    /lesson_results/:id/edit(.:format)                  lesson_results#edit
+                           lesson_result GET    /lesson_results/:id(.:format)                       lesson_results#show
+                                         PATCH  /lesson_results/:id(.:format)                       lesson_results#update
+                                         PUT    /lesson_results/:id(.:format)                       lesson_results#update
+                                         DELETE /lesson_results/:id(.:format)                       lesson_results#destroy
+                            task_results GET    /task_results(.:format)                             task_results#index
+                                         POST   /task_results(.:format)                             task_results#create
+                         new_task_result GET    /task_results/new(.:format)                         task_results#new
+                        edit_task_result GET    /task_results/:id/edit(.:format)                    task_results#edit
+                             task_result GET    /task_results/:id(.:format)                         task_results#show
+                                         PATCH  /task_results/:id(.:format)                         task_results#update
+                                         PUT    /task_results/:id(.:format)                         task_results#update
+                                         DELETE /task_results/:id(.:format)                         task_results#destroy
+                                students GET    /students(.:format)                                 students#index
+                                         POST   /students(.:format)                                 students#create
+                             new_student GET    /students/new(.:format)                             students#new
+                            edit_student GET    /students/:id/edit(.:format)                        students#edit
+                                 student GET    /students/:id(.:format)                             students#show
+                                         PATCH  /students/:id(.:format)                             students#update
+                                         PUT    /students/:id(.:format)                             students#update
+                                         DELETE /students/:id(.:format)                             students#destroy
+                                   tasks GET    /tasks(.:format)                                    tasks#index
+                                         POST   /tasks(.:format)                                    tasks#create
+                                new_task GET    /tasks/new(.:format)                                tasks#new
+                               edit_task GET    /tasks/:id/edit(.:format)                           tasks#edit
+                                    task GET    /tasks/:id(.:format)                                tasks#show
+                                         PATCH  /tasks/:id(.:format)                                tasks#update
+                                         PUT    /tasks/:id(.:format)                                tasks#update
+                                         DELETE /tasks/:id(.:format)                                tasks#destroy
+                                 lessons GET    /lessons(.:format)                                  lessons#index
+                                         POST   /lessons(.:format)                                  lessons#create
+                              new_lesson GET    /lessons/new(.:format)                              lessons#new
+                             edit_lesson GET    /lessons/:id/edit(.:format)                         lessons#edit
+                                  lesson GET    /lessons/:id(.:format)                              lessons#show
+                                         PATCH  /lessons/:id(.:format)                              lessons#update
+                                         PUT    /lessons/:id(.:format)                              lessons#update
+                                         DELETE /lessons/:id(.:format)                              lessons#destroy
+                                    root GET    /                                                   disciplines#table
+                       disciplines_table GET    /disciplines/table(.:format)                        disciplines#table
+                  disciplines_save_table POST   /disciplines/save_table(.:format)                   disciplines#save_table
+                      specialities_table GET    /specialities/table(.:format)                       specialities#table
+                 specialities_save_table POST   /specialities/save_table(.:format)                  specialities#save_table
+specialities_disciplines_selection_index GET    /specialities/disciplines_selection_index(.:format) specialities#disciplines_selection_index
+ specialities_disciplines_for_speciality GET    /specialities/disciplines_for_speciality(.:format)  specialities#disciplines_for_speciality
+                             competences GET    /competences(.:format)                              competences#index
+                                         POST   /competences(.:format)                              competences#create
+                          new_competence GET    /competences/new(.:format)                          competences#new
+                         edit_competence GET    /competences/:id/edit(.:format)                     competences#edit
+                              competence GET    /competences/:id(.:format)                          competences#show
+                                         PATCH  /competences/:id(.:format)                          competences#update
+                                         PUT    /competences/:id(.:format)                          competences#update
+                                         DELETE /competences/:id(.:format)                          competences#destroy
+                             disciplines GET    /disciplines(.:format)                              disciplines#index
+                                         POST   /disciplines(.:format)                              disciplines#create
+                          new_discipline GET    /disciplines/new(.:format)                          disciplines#new
+                         edit_discipline GET    /disciplines/:id/edit(.:format)                     disciplines#edit
+                              discipline GET    /disciplines/:id(.:format)                          disciplines#show
+                                         PATCH  /disciplines/:id(.:format)                          disciplines#update
+                                         PUT    /disciplines/:id(.:format)                          disciplines#update
+                                         DELETE /disciplines/:id(.:format)                          disciplines#destroy
+                            specialities GET    /specialities(.:format)                             specialities#index
+                                         POST   /specialities(.:format)                             specialities#create
+                          new_speciality GET    /specialities/new(.:format)                         specialities#new
+                         edit_speciality GET    /specialities/:id/edit(.:format)                    specialities#edit
+                              speciality GET    /specialities/:id(.:format)                         specialities#show
+                                         PATCH  /specialities/:id(.:format)                         specialities#update
+                                         PUT    /specialities/:id(.:format)                         specialities#update
+                                         DELETE /specialities/:id(.:format)                         specialities#destroy

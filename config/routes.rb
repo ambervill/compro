@@ -1,5 +1,7 @@
 Compro::Application.routes.draw do
 
+  resources :topics
+
   resources :discipline_results
 
   resources :topic_results
