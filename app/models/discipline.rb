@@ -2,6 +2,7 @@ class Discipline < ActiveRecord::Base
  
   has_many :discipline_competences
   has_many :competences, through: :discipline_competences
+  has_many :topics
   
  # {"1"=>{"1"=>"1", "5"=>"1"}, "2"=>{"2"=>"1"}, "3"=>{"2"=>"1"}}
   def self.save_competences(disc_comp_array)

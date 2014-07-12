@@ -7,17 +7,17 @@
     = csrf_meta_tags 
   
   %body
-    = link_to "Дисциплины  |", disciplines_path
     = link_to "Компетенции  |", competences_path
     = link_to "Специальности  |", specialities_path
     = link_to "Компетенции дисциплин  |", disciplines_table_path
     = link_to "Компетенции специальностей  |", specialities_table_path
     = link_to "Подбор дисциплин  |", specialities_disciplines_selection_index_path
     = link_to "Студенты  |", students_path
+    %br
+    = link_to "Дисциплины  |", disciplines_path
     = link_to "Темы  |", topics_path
     = link_to "Занятия  |", lessons_path
-
-    %br
+    = link_to "Задания  |", tasks_path
     = link_to "Результаты  |", task_results_path
     = yield
 

@@ -1,16 +1,16 @@
-%h1 Listing topics
+%h1 Темы 
 
-%table
+%table.table
   %tr
-    %th Discipline
-    %th Name
+    %th Дисциплина
+    %th Название темы
     %th
     %th
     %th
 
   - @topics.each do |topic|
     %tr
-      %td= topic.discipline_id
+      %td= topic.discipline.name
       %td= topic.name
       %td= link_to 'Show', topic
       %td= link_to 'Edit', edit_topic_path(topic)
