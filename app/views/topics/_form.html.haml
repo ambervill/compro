@@ -8,7 +8,6 @@
 
   .field
     = f.label :discipline_id
-    /= f.number_field :discipline_id
     = select_tag 'topic[discipline_id]', options_from_collection_for_select(Discipline.order(:id).all, "id", "name", @topic.discipline_id)
   .field
     = f.label :name

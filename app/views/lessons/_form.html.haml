@@ -7,13 +7,13 @@
           %li= msg
 
   .field
-    = f.label :topic_id
-    = f.number_field :topic_id
+    = f.label "Дисциплина"
+    = select_tag 'lesson[discipline_id]', options_from_collection_for_select(Discipline.order(:id).all, "id", "name", @lesson.discipline_id)
   .field
-    = f.label :discipline_id
-    = f.number_field :discipline_id
+    = f.label "Тема"
+    = select_tag 'lesson[topic_id]', options_from_collection_for_select(Topic.order(:id).all, "id", "name", @lesson.topic_id)
   .field
-    = f.label :caption
+    = f.label "Название занятия"
     = f.text_field :caption
   .actions
     = f.submit 'Save'

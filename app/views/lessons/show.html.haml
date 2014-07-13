@@ -2,10 +2,10 @@
 
 %p
   %b Topic:
-  = @lesson.topic_id
+  = @lesson.topic.name
 %p
   %b Discipline:
-  = @lesson.discipline_id
+  = @lesson.discipline.name
 %p
   %b Caption:
   = @lesson.caption
@@ -13,3 +13,5 @@
 = link_to 'Edit', edit_lesson_path(@lesson)
 \|
 = link_to 'Back', lessons_path
+
+= link_to 'New Lesson', new_lesson_path
