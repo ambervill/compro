@@ -1,7 +1,30 @@
 %p#notice= notice
-%p
-  %b Название:
-  = @discipline.name
+
+
+%table
+  %tr
+    %th Дисциплина 
+    %td{colspan: @lesson_count}
+      = @discipline.name
+  %tr
+    %th Темы
+    - @discipline.topics.each do |topic|
+      %td{colspan: topic.lessons.count}
+        = topic.name
+  %tr
+    %th Занятия
+    - @discipline.topics.each do |topic|
+      - topic.lessons.each do |lesson|
+        %td= lesson.caption
+  %tr
+    %th Задания
+    - @discipline.topics.each do |topic|
+      - topic.lessons.each do |lesson|
+        %td= lesson.tasks.collect{|task| task.level}.join("<br>").html_safe
+          
+  
+  
+%br
 = link_to 'Редактировать', edit_discipline_path(@discipline)
 |
 \#{link_to 'Назад', disciplines_path}

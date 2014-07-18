@@ -18,7 +18,10 @@
     = link_to "Темы  |", topics_path
     = link_to "Занятия  |", lessons_path
     = link_to "Задания  |", tasks_path
-    = link_to "Результаты  |", task_results_path
+    %br
+    = link_to "Результаты по дисциплинам  |", discipline_results_path
+    %br
+    \--------------------------------------------------------------------------------------------------------------------------
     = yield
-
+    %br
 

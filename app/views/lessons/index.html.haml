@@ -4,8 +4,8 @@
   %tr
     %th Дисциплина
     %th Тема
-    %th Название
-    %th Занятия
+    %th Название занятия
+    %th Задания
     %th
     %th
     %th
@@ -16,7 +16,7 @@
       %td= lesson.topic.name
       %td= lesson.caption
       %td 
-        = lesson.tasks.count 
+        = lesson.tasks.collect{|task| task.level}.join(" ") 
         = link_to('Создать', "#{new_task_path}?lesson_id=#{lesson.id}")
       %td= link_to 'Show', lesson
       %td= link_to 'Edit', edit_lesson_path(lesson)

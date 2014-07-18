@@ -14,6 +14,8 @@ class DisciplinesController < ApplicationController
   # GET /disciplines/1.json
   def show
     @discipline = Discipline.find(params[:id])
+    @topic_count = @discipline.topics.count
+    @lesson_count = @discipline.lessons.count
 
     respond_to do |format|
       format.html # show.html.erb
