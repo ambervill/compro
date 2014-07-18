@@ -8,10 +8,10 @@
 
   .field
     = f.label :discipline
-    = f.text_field :discipline
+    = select_tag 'discipline_result[discipline_id]', options_from_collection_for_select(Discipline.order(:id).all, "id", "name", @discipline_result.discipline_id)
   .field
     = f.label :student
-    = f.text_field :student
+    = select_tag 'discipline_result[student_id]', options_from_collection_for_select(Student.order(:name).all, "id", "name", @discipline_result.student_id)
   .field
     = f.label :grade
     = f.number_field :grade

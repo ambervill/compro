@@ -1,18 +1,18 @@
-%h1 Listing discipline_results
+%h1 Результаты студентов по дисциплинам
 
 %table
   %tr
-    %th Discipline
-    %th Student
-    %th Grade
+    %th Дисциплина
+    %th Студент
+    %th Оценка
     %th
     %th
     %th
 
   - @discipline_results.each do |discipline_result|
     %tr
-      %td= discipline_result.discipline
-      %td= discipline_result.student
+      %td= discipline_result.discipline.name
+      %td= discipline_result.student.name
       %td= discipline_result.grade
       %td= link_to 'Show', discipline_result
       %td= link_to 'Edit', edit_discipline_result_path(discipline_result)
