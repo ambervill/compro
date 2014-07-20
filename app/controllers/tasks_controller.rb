@@ -13,7 +13,7 @@ class TasksController < ApplicationController
   # GET /tasks/new
   def new
     @task = Task.new
-    @lesson = Lesson.find(params[:lesson_id])
+    @lesson = Lesson.find(params[:lesson_id]) if params[:lesson_id]
   end
 
   # GET /tasks/1/edit
@@ -54,6 +54,6 @@ class TasksController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def task_params
-      params.require(:task).permit(:lesson_id, :level, :xml)
+      params.require(:task).permit(:lesson_id, :level, :xml, :order_num)
     end
 end

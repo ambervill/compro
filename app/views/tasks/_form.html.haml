@@ -8,12 +8,19 @@
 
   .field
     = f.label "Уровень"
-    = f.number_field :level, value: 1
+    = f.number_field :level, value: @task.level || 1
+  .field
+    = f.label "Порядковый номер"
+    = f.number_field :order_num, value: @task.order_num || 1
   .field
     = f.label :xml
     = f.text_area :xml
   .field
-    = f.hidden_field :lesson_id, value: @lesson.id
+    = f.label "Занятие"
+    - lessonid = @task.lesson_id || (@lesson ? @lesson.id : nil)
+    - logger.debug lessonid
+    = select_tag 'task[lesson_id]', options_from_collection_for_select(Lesson.order(:id).all, "id", "caption", lessonid)
+
   .actions
     = f.submit 'Сохранить'
     

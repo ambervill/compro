@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140704181857) do
+ActiveRecord::Schema.define(version: 20140720091052) do
 
   create_table "competences", force: true do |t|
     t.string   "name"
@@ -122,6 +122,7 @@ ActiveRecord::Schema.define(version: 20140704181857) do
     t.text     "xml"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "order_num"
   end
 
   add_index "tasks", ["lesson_id"], name: "index_tasks_on_lesson_id"
