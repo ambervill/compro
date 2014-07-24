@@ -1,3 +1,5 @@
+= javascript_include_tag "jsapi", "chartkick"
+
 %h1 Результаты студентов по дисциплинам
 
 %table
@@ -13,7 +15,7 @@
     %tr
       %td= discipline_result.discipline.name
       %td= discipline_result.student.name
-      %td= discipline_result.grade
+      %td= pie_chart({success: discipline_result.grade, fail: 100-discipline_result.grade}, {colors: ["red", "green"], height: "30px", library: {legend: 'none', enableInteractivity: false, title: "pie"}}) 
       %td= link_to 'Show', discipline_result
       %td= link_to 'Edit', edit_discipline_result_path(discipline_result)
       %td= link_to 'Destroy', discipline_result, :method => :delete, :data => { :confirm => 'Are you sure?' }

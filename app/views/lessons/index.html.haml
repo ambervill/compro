@@ -16,7 +16,13 @@
       %td= lesson.topic.name
       %td= lesson.caption
       %td 
-        = lesson.tasks.collect{|task| task.level}.join(" ") 
+        - lesson_str = ""
+        - lesson.tasks.collect{|task| task.level}.uniq.each do |level| 
+          - lesson_str += "#{level}: "
+          - lesson.tasks.find_by_level(level).order(:order_num).each do |task|
+            - lesson_str += "#{link_to task.order_num, edit_task_path(task)} "
+          - lesson_str += "<br>"
+        = lesson_str.html_safe
         = link_to('Создать', "#{new_task_path}?lesson_id=#{lesson.id}")
       %td= link_to 'Show', lesson
       %td= link_to 'Edit', edit_lesson_path(lesson)
